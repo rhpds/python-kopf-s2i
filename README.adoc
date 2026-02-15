@@ -4,7 +4,7 @@ Source-to-Image for python https://kopf.readthedocs.io/en/latest/[kopf] based op
 
 == Usage
 
-This Python Kopf operator source-to-image can be used to build python-base operators using OpenShift source-to-image or Dockerfile based builds.
+This Python Kopf operator source-to-image can be used to build python-base operators using OpenShift source-to-image or Containerfile based builds.
 This s2i image may also be used with `odo` to do in-cluster operator development.
 
 === Kopf Peering CustomResourceDefinitions
@@ -109,14 +109,14 @@ Or build the python-kopf-s2i image from local source:
 oc start-build python-kopf-s2i --from-dir=../ -F
 ------------------------------------------------
 
-==== Dockerfile
+==== Containerfile
 
-This image may also be built with the provided `Dockerfile`.
+This image may also be built with the provided `Containerfile`.
 
 Using `podman`:
 
 --------------------------------------------------------------
-sudo podman build --tag python-kopf-s2i:latest -f ./Dockerfile
+sudo podman build --tag python-kopf-s2i:latest -f ./Containerfile
 --------------------------------------------------------------
 
 Using `docker`:
@@ -155,24 +155,24 @@ oc start-build kopf-simple --from-dir=../ -F
 Description for how to deploy and test this example can be found in
 xref:examples/kopf-simple/README.adoc[Simple Example].
 
-==== Dockerfile
+==== Containerfile
 
-This example image may also be built with the provided `Dockerfile`.
+This example image may also be built with the provided `Containerfile`.
 The provided configuration builds from the base image `quay.io/rhpds/python-kopf-s2i:latest`.
-In order to test your build of the s2i image you will need a modified version of the `Dockerfile`:
+In order to test your build of the s2i image you will need a modified version of the `Containerfile`:
 
 --------------------------------------------------------------------------------
-sed 's/^FROM .*/FROM python-kopf-s2i:latest/' example/Dockerfile >example/Dockerfile.custom
+sed 's/^FROM .*/FROM python-kopf-s2i:latest/' example/Containerfile >example/Containerfile.custom
 --------------------------------------------------------------------------------
 
 Build using `podman`:
 
 --------------------------------------------------------------------------------
-sudo podman build --tag python-kopf-s2i-example:latest -f ./example/Dockerfile.custom
+sudo podman build --tag python-kopf-s2i-example:latest -f ./example/Containerfile.custom
 --------------------------------------------------------------------------------
 
 Using `docker`:
 
 --------------------------------------------------------------------------------
-sudo docker build -t python-kopf-s2i-example:latest -f ./example/Dockerfile.custom example/
+sudo docker build -t python-kopf-s2i-example:latest -f ./example/Containerfile.custom example/
 --------------------------------------------------------------------------------
