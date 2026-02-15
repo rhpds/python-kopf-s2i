@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version to be published (e.g., v1.38.0, v1.38.0-1)"
+        description: "Version to be published (e.g., v1.43.0, v1.43.0-1)"
         required: true
         type: string
         default: "latest"
