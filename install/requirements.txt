@@ -1,4 +1,4 @@
-kopf==1.43.0
+kopf==1.44.4
 kubernetes==35.0.0
 kubernetes-asyncio==35.0.0
 openshift==0.13.2

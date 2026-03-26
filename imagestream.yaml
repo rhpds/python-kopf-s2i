@@ -12,18 +12,18 @@ spec:
   tags:
   - annotations:
       description: |-
-        Build and run operators with Python Kopf 1.43.
+        Build and run operators with Python Kopf 1.44.
         https://kopf.readthedocs.io/
       iconClass: icon-python
       openshift.io/display-name: Python Kopf
       supports: kopf,python
       tags: builder,python,kopf
-      version: "1.43"
+      version: "1.44"
     from:
       kind: DockerImage
-      name: quay.io/rhpds/python-kopf-s2i:v1.43
+      name: quay.io/rhpds/python-kopf-s2i:v1.44
     importPolicy: {}
-    name: "1.43"
+    name: "1.44"
     referencePolicy:
       type: Local
   - annotations:
